@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Docker команды</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    </head>
+    <body>
+      <div class="index">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="jpg/logo.jpg"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Обучающий портал компании</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cmd.html">Командная строка Win</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="macOS.html">Терминал Mac</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="git.html">Команды Git</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="CICD.html">CI/CD инструменты</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Docker.html">Docker команды</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <body>
+        <h2>Шпаргалка с командами Docker</h2>
+        <ul>
+            <li>
+                <p><strong>docker login</strong> - Вход в реестр</p>
+                <p><code>docker login localhost:8080</code></p>
+            </li>
+            <li>
+                <p><strong>docker pull nginx</strong> - Pull (выгрузка из реестра) образа</p>
+                <p><code>docker pull eon01/nginx localhost:5000/myadmin/nginx</code></p>
+            </li>
+            <li>
+                <p><strong>docker search nginx</strong> - Поиск образа</p>
+                <p><code>docker search nginx --filter stars=3 --no-trunc busybox</code></p>
+            </li>
+            <li>
+                <p><strong>docker push eon01/nginx</strong> - Push (загрузка в реестр) образа</p>
+                <p><code>docker push eon01/nginx localhost:5000/myadmin/nginx</code></p>
+            </li>
+            <li>
+                <p><strong>docker create</strong> - Создание контейнера</p>
+                <p><code>docker create -t -i eon01/infinite --name infinite</code></p>
+            </li>
+            <li>
+                <p><strong>docker run</strong> - Первый запуск контейнера</p>
+                <p><code>docker run -it --name infinite -d eon01/infinite</code></p>
+            </li>
+            <li>
+                <p><strong>docker rename</strong> - Переименование контейнера</p>
+                <p><code>docker rename infinite infinity</code></p>
+            </li>
+            <li>
+                <p><strong>docker rm</strong> - Удаление контейнера</p>
+                <p><code>docker rm infinite</code></p>
+            </li>
+            <li>
+                <p><strong>docker update</strong> - Обновление контейнера</p>
+                <p><code>docker update --cpu-shares 512 -m 300M infinite</code></p>
+            </li>
+            <li>
+                <p><strong>docker start</strong> - Запуск остановленного контейнера</p>
+                <p><code>docker start nginx</code></p>
+            </li>
+            <li>
+                <p><strong>docker stop</strong> - Остановка</p>
+                <p><code>docker stop nginx</code></p>
+            </li>
+            <li>
+                <p><strong>docker restart</strong> - Перезагрузка</p>
+                <p><code>docker restart nginx</code></p>
+            </li>
+            <li>
+                <p><strong>docker wait</strong> - Блокировка (до остановки контейнера)</p>
+                <p><code>docker wait nginx</code></p>
+            </li>
+            <li>
+                <p><strong>docker attach</strong> - Подключение к существующему контейнеру</p>
+                <p><code>docker attach nginx</code></p>
+            </li>
+            <li>
+                <p><strong>docker ps</strong> - Работающие контейнеры</p>
+                <p><code>docker ps -a</code></p>
+            </li>
+            <li>
+                <p><strong>docker logs</strong> - Логи контейнера</p>
+                <p><code>docker logs infinite</code></p>
+            </li>
+            <li>
+                <p><strong>docker inspect infinite</strong> - Информация о контейнере</p>
+                <p><code>docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -q)</code></p>
+            </li>
+            <li>
+                <p><strong>docker events</strong> - События контейнера</p>
+                <p><code>docker events infinite</code></p>
+            </li>
+            <li>
+                <p><strong>docker port</strong> - Публичные порты</p>
+                <p><code>docker port infinite</code></p>
+            </li>
+            <li>
+                <p><strong>docker top</strong> - Выполняющиеся процессы</p>
+                <p><code>docker top infinite</code></p>
+            </li>
+            <li>
+                <p><strong>docker stats</strong> - Использование ресурсов</p>
+                <p><code>docker stats infinite</code></p>
+            </li>
+            <li>
+                <p><strong>docker diff</strong> - Изменения в файлах или директориях файловой системы контейнера</p>
+                <p><code>docker diff infinite</code></p>
+            </li>
+        </ul>
+    
+</body>
+</html>
